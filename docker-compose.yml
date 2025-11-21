@@ -1,0 +1,8 @@
+export class ProductListComponent {
+  products: any[] = [];
+  constructor(private http: HttpClient) {
+    this.http.get('http://localhost:8080/api/products').subscribe(data => {
+      this.products = data as any[];
+    });
+  }
+}
